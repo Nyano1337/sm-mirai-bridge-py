@@ -16,7 +16,8 @@ sessionkey = json.loads(ws.recv())['data']['session']
 async def echo(websocket):
     async for message in websocket:
         ws.send(message)
-        msg = ws.recv()
+        fut = asyncio.get_running_loop().run_in_executor(None, ws.recv)
+        msg = await asyncio.wrap_future(future=fut)
         print(msg)
         await websocket.send(msg)
 
