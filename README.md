@@ -1,2 +1,7 @@
-# sm-mirai-bridge-py
- python script for building a bridge for mirai bot websocket adapter
+# WIP 多线程新手
+
+
+
+## 这是个单向桥，现阶段只能连通服务器socket，还不能跟mirai实时同步.
+
+
